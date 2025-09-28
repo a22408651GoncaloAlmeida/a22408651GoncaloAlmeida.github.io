@@ -1,3 +1,54 @@
+/* Fundo geral da página */
 body {
-    background-color: #b3b3b3;
+    background-color: #f5f5f5;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 24px 0 0;
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Navegação */
+nav {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 16px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+    background-color: #fff;
+    margin: 32px auto;
+    padding: 32px;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Rodapé */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 32px;
+    border-radius: 0 0 12px 12px;
 }
