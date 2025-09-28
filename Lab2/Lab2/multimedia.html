@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cidade</title>
+        <link rel="stylesheet" href="../../styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Lisboa</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="local.html">Localização</a>
+                <a href="multimedia.html">Multimédia</a>
+                <a href="info.html">Informação</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Multimédia</h2> 
+            <p>Nesta página encontra conteúdos multimédia.</p>
+            <p>
+                <a href="#fotografias">Fotografias</a> 
+                <a href="#video">Video</a> 
+                <a href="#poesia">Poesia</a>
+            </p>
+            <section>     
+                <h3 id="fotografias">Fotografias</h3>
+                <style>
+                    .fotografias {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        max-width: 640px;
+                    }
+                    .fotografias img {
+                        width: 150px;
+                        border-radius: 20px;
+                        flex: 0 0 150px;
+                    }
+                    /* Estilização do poema usando :nth-child */
+                    .poema p:nth-child(1) {
+                        color:#ea4335;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                    }
+                    .poema p:nth-child(2) {
+                        color: #34a853;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                    }
+                    .poema p:nth-child(3) {
+                        color: #1a73e8;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                    }
+                    .poema p:nth-child(4) {
+                        color: #fbbc05;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                    }
+                </style>
+                <div class="fotografias">         
+                    <img src="images/rua augusta.jpeg" alt="rua augusta">         
+                    <img src="images/belem.jpeg" alt="belem">         
+                    <img src="images/eletrico.jpeg" alt="eletrico">         
+                    <img src="images/images.jpeg" alt="belem">         
+                    <img src="images/pena.jpeg" alt="palacio da pena">         
+                    <img src="images/praça.jpeg" alt="praça">         
+                    <img src="images/rossio.jpeg" alt="rossio">         
+                    <img src="images/sunset.jpeg" alt="sunset">     
+                </div> 
+            </section>
+            <section>
+                <h3 id="video">Video</h3>
+                <iframe <iframe width="630" height="315" src="https://www.youtube.com/embed/1yBuwEuf3Sw?si=tslxdkKNobUhMizb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ></iframe>
+            </section>
+            <section>
+                <h3 id="poesia">Poesia</h3>
+                <div class="poema">
+                    <p>Lisboa, cidade de luz e encanto,</p>
+                    <p>Onde o Tejo beija o mar com manto.</p>
+                    <p>Ruas de história, fado a cantar,</p>
+                    <p>Em cada esquina, um sonho a brilhar.</p>
+                    <br>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Portugal 2025</p>
+        </footer>
+    </body>
+</html>
