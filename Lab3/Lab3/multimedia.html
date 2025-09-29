@@ -15,7 +15,15 @@
                 <a href="info.html">Informação</a>
             </nav>
         </header>
-        <main>
+        <main style="padding-top:0; margin-top:0;">
+            <!-- Removido o espaço entre navegação e imagem emblemática -->
+            <section class="emblematica-section" style="margin-top:0;">
+                <div class="emblematica-img-container">
+                    <img src="images/pixabay lisboa.jpg" alt="Lisboa" class="emblematica-img">
+                    <span class="emblematica-frase">Lisboa, onde o Tejo encontra a história.</span>
+                </div>
+            </section>
+
             <h2>Multimédia</h2> 
             <p>Nesta página encontra conteúdos multimédia.</p>
             <p>
@@ -23,6 +31,7 @@
                 <a href="#video">Video</a> 
                 <a href="#poesia">Poesia</a>
             </p>
+
             <section>     
                 <h3 id="fotografias">Fotografias</h3>
                 <style>
@@ -36,6 +45,17 @@
                         width: 150px;
                         border-radius: 20px;
                         flex: 0 0 150px;
+                        transition: 
+                            width 0.7s,
+                            box-shadow 0.7s,
+                            transform 0.7s;
+                        box-shadow: 0 2px 8px #0001;
+                        cursor: pointer;
+                    }
+                    .fotografias img:hover {
+                        width: 200px;
+                        box-shadow: 0 8px 24px #1565c088;
+                        transform: scale(1.08) rotate(-2deg);
                     }
                     /* Estilização do poema usando :nth-child */
                     .poema p:nth-child(1) {
@@ -58,6 +78,58 @@
                         letter-spacing: 2px;
                         font-style: italic;
                     }
+                    /* Nova secção: fotografia emblemática */
+                    .emblematica-section {
+                        width: 100vw;
+                        margin-left: 50%;
+                        transform: translateX(-50%);
+                        margin-bottom: 32px;
+                        margin-top: 0;
+                    }
+                    .emblematica-img-container {
+                        position: relative;
+                        width: 100%;
+                        max-height: 60vw;
+                        overflow: hidden;
+                    }
+                    .emblematica-img {
+                        width: 100vw;
+                        height: auto;
+                        display: block;
+                        object-fit: cover;
+                        max-height: 60vw;
+                    }
+                    .emblematica-frase {
+                        position: absolute;
+                        bottom: 10%;
+                        left: 5%;
+                        color: #fff;
+                        background: rgba(21, 101, 192, 0.7);
+                        padding: 1vw 2vw;
+                        border-radius: 1vw;
+                        font-size: 4vw;
+                        font-weight: bold;
+                        text-shadow: 2px 2px 8px #000a;
+                        max-width: 90vw;
+                    }
+                    @media (max-width: 700px) {
+                        .emblematica-frase {
+                            font-size: 6vw;
+                            padding: 2vw 3vw;
+                        }
+                        .emblematica-img {
+                            max-height: 50vw;
+                        }
+                    }
+                    @media (max-width: 500px) {
+                        .emblematica-frase {
+                            font-size: 8vw;
+                            padding: 3vw 4vw;
+                        }
+                        .emblematica-img {
+                            max-height: 60vw;
+                        }
+                    }
                 </style>
                 <div class="fotografias">         
                     <img src="images/rua augusta.jpeg" alt="rua augusta">         
@@ -72,7 +144,7 @@
             </section>
             <section>
                 <h3 id="video">Video</h3>
-                <iframe <iframe width="630" height="315" src="https://www.youtube.com/embed/1yBuwEuf3Sw?si=tslxdkKNobUhMizb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ></iframe>
+                <iframe width="630" height="315" src="https://www.youtube.com/embed/1yBuwEuf3Sw?si=tslxdkKNobUhMizb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>
             <section>
                 <h3 id="poesia">Poesia</h3>

@@ -166,14 +166,41 @@
         }
 
         main section:nth-child(3) {
-            height: 80vh;
-            background: #1976d2; /* azul acento */
-            color: #fff;
+            height: auto;
+            min-height: 60vh;
+            background: #fff;      /* fundo branco */
+            color: #1565c0;        /* letras azuis */
+            padding: 48px 0;
+        }
+        .disciplina-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 32px 16px;
+            box-sizing: border-box;
+        }
+        .disciplina-text {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            color: #1565c0; /* letras azuis */
+        }
+        @media (max-width: 800px) {
+            .disciplina-flex {
+                padding: 24px 8px;
+            }
+            .disciplina-text {
+                max-width: 100%;
+            }
         }
 
         footer {
             height: 10vh;
-            background: #1565c0;
+            background: #000;
             color: white;
         }
 
@@ -277,9 +304,17 @@
         </div>
     </section>
     <section id="interfacesweb">
-        <div>
-            <p style="font-size:2.5rem; margin-bottom: 16px;">DIW 🎉</p>
-            <p style="font-size:1.2rem; margin-top:16px; text-align:center;">Desenvolvimento de Interfaces Web<br>Universidade Lusófona</p>
+        <div class="disciplina-flex">
+            <div class="disciplina-text">
+                <p style="font-size:2.5rem; margin-bottom: 16px; text-align:center;">Desenvolvimento de Interfaces Web 🎉</p>
+                <p style="font-size:1.2rem; margin-top:16px; text-align:center;">
+                    Universidade Lusófona
+                </p>
+                <p style="margin-top:24px; font-size:1.1rem; text-align:center;">
+                    Esta disciplina explora os fundamentos do desenvolvimento de interfaces web modernas, focando em HTML, CSS, acessibilidade, responsividade e boas práticas de design.<br>
+                    O objetivo é capacitar os alunos a criar experiências digitais atrativas, funcionais e inclusivas.
+                </p>
+            </div>
         </div>
     </section>
 </main>
