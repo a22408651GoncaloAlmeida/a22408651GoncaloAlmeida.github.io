@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s;
+}
+header {
+    background: #1565c0;
+    color: #fff;
+    padding: 18px 0;
+    text-align: center;
+}
+footer {
+    background: #000;
+    color: #fff;
+    padding: 18px 0;
+    text-align: center;
+}
+main {
+    max-width: 700px;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #0001;
+    padding: 32px 24px;
+}
+.btns {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn-label {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+button {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background: #1976d2;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-width: 140px;
+}
+button:hover {
+    background: #0d47a1;
+}
+.contador {
+    font-size: 2.2rem;
+    color: #1976d2;
+    min-width: 40px;
+    text-align: center;
+    display: block;
+    margin: 0 auto 32px auto;
+}
+.matue-frase {
+    margin: 40px auto 0 auto;
+    max-width: 500px;
+    font-size: 1.5rem;
+    color: #222;
+    background: none;
+    border-radius: 12px;
+    padding: 24px 18px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+.pergunta {
+    margin: 36px 0 12px 0;
+    font-size: 1.1rem;
+}
+.input-cor {
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.mateus-img-area {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0 0 0;
+}
+.mateus-img-area img {
+    width: 220px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #0002;
+    transition: filter 0.3s, transform 0.3s;
+}

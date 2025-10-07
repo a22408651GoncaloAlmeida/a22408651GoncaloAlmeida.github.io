@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cidade</title>
-        <link rel="stylesheet" href="../../styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>Lisboa</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="local.html">Localização</a>
-                <a href="multimedia.html">Multimédia</a>
-                <a href="info.html">Informação</a>
-            </nav>
-        </header>
-        <main>
-            <h2>Home</h2>
-            <p>A minha cidade é muito linda!!!</p>
-        </main>
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Laboratório 4</h1>
+    </header>
+    <main>
+        <span class="contador" id="contador">0</span>
+
+        <section>
+            <div class="btns">
+                <div class="btn-label">Contador</div>
+                <button onclick="incrementar()">Click</button>
+                <button ondblclick="incrementar()">Double Click</button>
+                <button onmouseover="incrementar()">+Mouse Over</button>
+                <button onmouseover="decrementar()">-Mouse Over</button>
+            </div>
+        </section>
+
+        <section class="mateus-img-area">
+            <img src="images/mateus.jpeg" alt="Mateus"
+                onmouseover="iniciarContagem()"
+                onmouseout="pararContagem()"
+            >
+        </section>
+
+        <section>
+            <div class="matue-frase" id="matueFrase"
+                onmouseover="mudarFrase(true)"
+                onmouseout="mudarFrase(false)"
+                onclick="trocarFrase()"
+                style="background: none;"
+            >
+                "O matuê é o rei do trap!"
+            </div>
+        </section>
+
+        <section>
+            <div class="pergunta">
+                Escreve uma cor em inglês:
+                <input class="input-cor" id="inputCorTexto" type="text" placeholder="ex: red" oninput="mudarCorTexto()">
+            </div>
+        </section>
+
+        <section>
+            <div class="pergunta">
+                Escreve uma cor de fundo em inglês:
+                <input class="input-cor" id="inputCorFundo" type="text" placeholder="ex: yellow" oninput="mudarCorFundo()">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Universidade Lusófona &copy; 2025</p>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
 </html>
