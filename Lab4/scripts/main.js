@@ -15,13 +15,12 @@ function decrementar() {
     atualizar();
 }
 
-// Contador automático ao passar o rato na imagem
 function iniciarContagem() {
     if (!intervalo) {
         intervalo = setInterval(() => {
             contador++;
             atualizar();
-        }, 100); // soma a cada 100ms
+        }, 100);
     }
 }
 
@@ -52,13 +51,13 @@ function trocarFrase() {
     el.textContent = frases[fraseIndex];
 }
 
-// Mudar a cor do texto da frase
+
 function mudarCorTexto() {
     const cor = document.getElementById('inputCorTexto').value;
     document.getElementById('matueFrase').style.color = cor;
 }
 
-// Mudar a cor do fundo
+
 function mudarCorFundo() {
     const cor = document.getElementById('inputCorFundo').value;
     document.body.style.background = cor;

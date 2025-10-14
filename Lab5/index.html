@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Lab5</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Laboratório 5</h1>
+    </header>
+
+    <main>
+        <section id="passa">
+            <div class="row">
+                <div id="passa-label" class="label"
+                     onmouseover="handlePassaOver()"
+                     onmouseout="handlePassaOut()">1. Passa por aqui!</div>
+            </div>
+        </section>
+
+        <section id="pinta">
+            <div class="row">
+                <div id="pinta-label" class="label">2. Dá-me cor!</div>
+                <div>
+                    <button class="small" data-color="crimson">Crimson</button>
+                    <button class="small" data-color="seagreen">Seagreen</button>
+                    <button class="small" data-color="royalblue">RoyalBlue</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="escreve">
+            <div class="row">
+                <div class="label">3. Experimenta escrever...</div>
+                <input id="digit-input" type="text" oninput="handleDigitInput(event)">
+            </div>
+        </section>
+
+        <section id="escolhe">
+            <div class="row">
+                <div class="label">4. Escolha uma cor em inglês:</div>
+                <select id="color-select" onchange="aplicarCorFundo.call(this)">
+                    <option value="">-- escolha --</option>
+                    <option value="white">White</option>
+                    <option value="lightyellow">LightYellow</option>
+                    <option value="skyblue">SkyBlue</option>
+                    <option value="lavender">Lavender</option>
+                    <option value="lightgreen">LightGreen</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="conta">
+            <div class="row contador-wrap">
+                <div class="label">5.</div>
+                <button id="conta-btn">Conta!</button>
+                <div class="counter-display" id="counter">0</div>
+            </div>
+        </section>
+
+        <section id="evento6">
+            <div class="row">
+                <div class="label">6.</div>
+                <form id="form6">
+                    <input id="nome" type="text" placeholder="insira o seu nome" required>
+                    <input id="idade" type="number" placeholder="idade" required min="0" style="width:100px">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <p id="saudacao"></p>
+        </section>
+    </main>
+
+    <footer>
+        <small>Universidade Lusófona © 2025</small>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
