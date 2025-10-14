@@ -15,6 +15,16 @@ let digitColorIndex = 0;
 
 let contador = Number(localStorage.getItem('lab5_counter')) || 0;
 
+let autoCounter = 0;
+const autoCounterEl = document.getElementById('auto-counter');
+
+function count() {
+    autoCounter++;
+    if (autoCounterEl) autoCounterEl.textContent = autoCounter;
+}
+
+setInterval(count, 1000);
+
 const handlePassaOver = () => {
     passaLabel.textContent = '1. Obrigado por passares';
 };
