@@ -1,47 +1,155 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.4; }
-
-header { padding: 1rem; border-bottom: 1px solid #ddd; }
-header > nav ul { display: flex; gap: 1rem; list-style: none; padding: 0; margin: .5rem 0 0; }
-header a { text-decoration: none; }
-
+/* Layout principal: produtos à esquerda, cesto à direita */
 main {
-  display: flex;               /* FLEX: Produtos | Cesto lado a lado */
+  display: flex;
   gap: 2rem;
   align-items: flex-start;
-  padding: 1.5rem;
+  padding: 1rem;
+}
+section { flex: 1; }
+#cesto { max-width: 420px; }
+
+header nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-section { flex: 1; }
-#cesto { max-width: 420px; }   /* Cesto mais estreito */
+/* Links */
+header nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.25rem 0;
+}
 
-h1, h2, h3 { margin: 0 0 .75rem; }
+/* Efeito sublinhado animado */
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #00b4d8;  /* cor do destaque */
+  transition: width 0.3s ease;
+}
+header nav a:hover::after,
+header nav a:focus::after {
+  width: 100%;
+}
 
-.grade {
-  /* Nó pai de produtos */
-  display: grid;               /* GRID: cartões responsivos */
+/* Realce visual para link ativo (se quiseres usar .ativo) */
+header nav a.ativo {
+  color: #00b4d8;
+}
+
+/* ======= Versão Mobile ======= */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  header nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  header nav a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}
+
+
+/* Grade de produtos */
+#lista-produtos {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
-  list-style: none; padding: 0; margin: 0;
 }
 
-.lista-cesto { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
-
-article {
+/* Cartões */
+#lista-produtos > li > article,
+#lista-produtos > article {
   border: 1px solid #e5e5e5;
   border-radius: .75rem;
   padding: .75rem;
   display: grid;
   gap: .5rem;
 }
-
 article img { width: 100%; height: auto; border-radius: .5rem; }
 
+/* Cesto */
+#lista-cesto ul { display: grid; gap: .75rem; }
+#lista-cesto li > article {
+  border: 1px solid #e5e5e5;
+  border-radius: .5rem;
+  padding: .5rem;
+  display: grid;
+  gap: .25rem;
+  grid-template-columns: 1fr auto;
+}
+#lista-cesto li > article img { width: 72px; height: auto; justify-self: end; }
+
+/* Botões */
 button {
-  cursor: pointer; border: none; padding: .5rem .75rem; border-radius: .5rem;
-  background: #111; color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: .5rem;
+  padding: .5rem .75rem;
+  background: #111;
+  color: #fff;
 }
 button:hover { opacity: .9; }
+/* Grade responsiva */
+#lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
 
-footer { padding: 1rem; border-top: 1px solid #ddd; text-align: center; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+/* Cada item da lista ocupa a célula toda */
+#lista-produtos > li { height: 100%; }
+
+/* Cartão com altura igual e conteúdo em coluna */
+#lista-produtos > li > article,
+#lista-produtos > article {
+  height: 100%;
+  display: flex;              /* coluna */
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  border-radius: .75rem;
+  padding: .75rem;
+  gap: .5rem;
+}
+
+/* A imagem tem proporção fixa e preenche sem “esticar” */
+#lista-produtos article figure { 
+  margin: 0;
+  aspect-ratio: 4/3;          /* mantém altura coerente */
+  overflow: hidden;
+  border-radius: .5rem;
+}
+#lista-produtos article figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* corta para caber */
+}
+
+/* A descrição cresce para empurrar o botão para o fundo */
+#lista-produtos article p:nth-of-type(1) { 
+  flex-grow: 1;               /* assume que a 1ª <p> é a descrição */
+}
+
+/* Botões alinhados no fundo do cartão */
+#lista-produtos article button { 
+  margin-top: auto; 
+}
+
+/* altura mínima consistentemente agradável */
+#lista-produtos > li > article { min-height: 360px; }
