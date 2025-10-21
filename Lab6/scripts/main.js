@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function carregarProdutos(produtos) {
   const pai = document.querySelector('#lista-produtos') || document.querySelector('#produtos');
   if (!pai) {
-    console.warn('⚠️ Nó pai não encontrado (#lista-produtos ou #produtos).');
+    console.warn('não encontrado (#lista-produtos ou #produtos).');
     return;
   }
 
@@ -48,7 +48,6 @@ function carregarProdutos(produtos) {
 
     const artigo = criarProduto(produto);
 
-    // se pai for UL, embrulha em LI
     if (pai.tagName.toLowerCase() === 'ul') {
       const li = document.createElement('li');
       li.appendChild(artigo);
