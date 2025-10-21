@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Loja</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Loja</h1>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#cesto">Cesto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Produtos -->
+    <section id="produtos" aria-labelledby="titulo-produtos">
+      <h2 id="titulo-produtos">Produtos</h2>
+      <!-- Nó pai onde o JS insere <li><article>…</article></li> -->
+      <ul id="lista-produtos" class="grade" aria-live="polite" aria-busy="false"></ul>
+    </section>
+
+    <!-- Cesto -->
+    <section id="cesto" aria-labelledby="titulo-cesto">
+      <h2 id="titulo-cesto">Cesto</h2>
+      <!-- Nó pai para itens do cesto -->
+      <ul id="lista-cesto" class="lista-cesto" aria-live="polite" aria-busy="false"></ul>
+      <p><strong>Total:</strong> <output id="total-cesto" aria-live="polite">€ 0,00</output></p>
+      <button type="button" id="limpar-cesto">Esvaziar cesto</button>
+    </section>
+  </main>
+
+  <footer>
+    <h2 class="sr-only">Informações</h2>
+  </footer>
+
+  <script src="scripts/produtos.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

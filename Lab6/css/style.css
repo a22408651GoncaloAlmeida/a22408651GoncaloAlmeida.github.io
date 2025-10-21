@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.4; }
+
+header { padding: 1rem; border-bottom: 1px solid #ddd; }
+header > nav ul { display: flex; gap: 1rem; list-style: none; padding: 0; margin: .5rem 0 0; }
+header a { text-decoration: none; }
+
+main {
+  display: flex;               /* FLEX: Produtos | Cesto lado a lado */
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+section { flex: 1; }
+#cesto { max-width: 420px; }   /* Cesto mais estreito */
+
+h1, h2, h3 { margin: 0 0 .75rem; }
+
+.grade {
+  /* Nó pai de produtos */
+  display: grid;               /* GRID: cartões responsivos */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  list-style: none; padding: 0; margin: 0;
+}
+
+.lista-cesto { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
+
+article {
+  border: 1px solid #e5e5e5;
+  border-radius: .75rem;
+  padding: .75rem;
+  display: grid;
+  gap: .5rem;
+}
+
+article img { width: 100%; height: auto; border-radius: .5rem; }
+
+button {
+  cursor: pointer; border: none; padding: .5rem .75rem; border-radius: .5rem;
+  background: #111; color: #fff;
+}
+button:hover { opacity: .9; }
+
+footer { padding: 1rem; border-top: 1px solid #ddd; text-align: center; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
