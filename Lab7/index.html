@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Loja</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Loja</h1>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#cesto">Cesto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Produtos -->
+    <section id="produtos" aria-labelledby="titulo-produtos">
+      <h2 id="titulo-produtos">Produtos</h2>
+      <!-- filtros / lista já existentes -->
+      <label for="filtro-categoria" style="font-weight:700; display:inline-block; margin-bottom:8px;">
+        Filtrar por categoria:
+      </label>
+      <select id="filtro-categoria" aria-label="Filtro de categoria">
+        <option value="">Todas</option>
+      </select>
+
+      <label for="filtro-ordenacao" style="font-weight:700; display:inline-block; margin-left:12px;">
+        Ordenar:
+      </label>
+      <select id="filtro-ordenacao" aria-label="Ordenar produtos">
+        <option value="">Nenhuma</option>
+        <option value="price-asc">Preço crescente</option>
+        <option value="price-desc">Preço decrescente</option>
+      </select>
+
+      <input id="pesquisa-produtos" type="search" placeholder="Pesquisar por nome..." aria-label="Pesquisar produtos" style="margin-left:12px;">
+
+      <ul id="lista-produtos" class="grade" aria-live="polite" aria-busy="false"></ul>
+    </section>
+
+    <!-- Cesto / Checkout -->
+    <aside id="cesto" aria-labelledby="titulo-cesto">
+      <h2 id="titulo-cesto">Cesto</h2>
+
+      <div id="lista-cesto"></div>
+
+      <p style="font-weight:700">Total: <span id="total-cesto">€0.00</span></p>
+
+      <div id="checkout" style="margin-top:12px;">
+        <label style="margin-right:12px;"><input type="checkbox" id="is-student">És estudante do DEISI?</label>
+        <input id="coupon-code" type="text" placeholder="Cupão" style="margin-right:8px;">
+        <button id="comprar-btn">Comprar</button>
+        <p id="checkout-message" aria-live="polite" style="margin-top:8px;font-weight:600"></p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <h2 class="sr-only">Informações</h2>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
